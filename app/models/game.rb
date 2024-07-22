@@ -13,4 +13,7 @@
 #
 class Game < ApplicationRecord
   has_many :children, class_name: "Game", foreign_key: "parent_id"
+
+  validates :api_id, presence: true
+  validates :title, presence: true
 end

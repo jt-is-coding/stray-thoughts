@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_22_165034) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_22_170323) do
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "image"
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_165034) do
     t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
     t.index ["author_id"], name: "index_notes_on_author_id"
     t.index ["parent_id"], name: "index_notes_on_parent_id"
   end

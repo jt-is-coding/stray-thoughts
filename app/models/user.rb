@@ -25,4 +25,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :notes, class_name: "Note", foreign_key: "author_id"
+
+  validates :email, presence: true
+  validates :encrypted_password, presence: true
+  validates :username, presence: true
 end

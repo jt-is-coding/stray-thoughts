@@ -4,6 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  body       :text
+#  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  author_id  :integer          not null
@@ -22,4 +23,7 @@
 class Note < ApplicationRecord
   belongs_to :author, class_name: "User"
   belongs_to :parent, class_name: "Game"
+
+  validates :title, presence: true
+  validates :author_id, presence: true
 end
