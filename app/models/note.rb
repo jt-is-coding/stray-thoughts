@@ -2,13 +2,16 @@
 #
 # Table name: notes
 #
-#  id         :integer          not null, primary key
-#  body       :text
-#  title      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  author_id  :integer          not null
-#  parent_id  :integer
+#  id          :integer          not null, primary key
+#  body        :text
+#  description :text
+#  image       :string
+#  platforms   :string
+#  title       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  author_id   :integer          not null
+#  parent_id   :integer
 #
 # Indexes
 #
