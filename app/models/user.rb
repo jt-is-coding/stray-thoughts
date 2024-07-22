@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
   has_many :notes, class_name: "Note", foreign_key: "author_id"
 
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
   validates :encrypted_password, presence: true
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
 end
