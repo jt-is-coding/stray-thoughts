@@ -27,6 +27,6 @@ class Note < ApplicationRecord
   belongs_to :author, class_name: "User"
   belongs_to :parent, class_name: "Game"
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
   validates :author_id, presence: true
 end

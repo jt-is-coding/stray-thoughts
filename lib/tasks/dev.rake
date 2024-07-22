@@ -18,4 +18,32 @@ task({ :sample_data => :environment }) do
       p u.errors.full_messages
   end
   p "There are now #{User.count} users"
+
+  20.times do
+    game = Faker::Game
+    g = Game.create(
+      title: game.title,
+      description: game.genre,
+      image: "sample",
+      platforms: game.platform,
+      api_id: rand(1000)
+    )
+    p g.errors.full_messages
+  end
+  p "There are now #{Game.count} games"
+
+  5.times do
+    game = Game.all.sample
+    n = Note.create(
+      author: User.all.sample,
+      parent: game,
+      title: game.title,
+      description: game.description,
+      platforms: game.platforms,
+      image: game.image,
+      body: Faker::JapaneseMedia::StudioGhibli.quote
+    )
+    p n.errors.full_messages
+  end
+  p "There are now #{Note.count} notes"
 end
