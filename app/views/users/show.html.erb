@@ -2,6 +2,9 @@
 <h2>Notes</h2>
 <ul>
   <% @user.notes.each do |note| %>
-    <li><%= note.title %></li>
+    <li>
+      
+      <%= link_to "#{note.title}", "/notes/#{note.id}", class: "nav-link" %>
+    </li>
   <% end %>
 </ul>
