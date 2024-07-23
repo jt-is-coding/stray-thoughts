@@ -39,18 +39,22 @@ task({ :sample_data => :environment }) do
   end
   p "There are now #{Game.count} games"
 
-  5.times do
-    game = Game.all.sample
-    n = Note.create(
-      author: User.all.sample,
-      parent: game,
-      title: game.title,
-      description: game.description,
-      platforms: game.platforms,
-      image: game.image,
-      body: Faker::JapaneseMedia::StudioGhibli.quote
-    )
-    p n.errors.full_messages
+  users = User.all
+  p users.at(0).username
+  users.each do |user|
+    rand(1..3).times do
+      game = Game.all.sample
+      n = Note.create(
+        author: user,
+        parent: game,
+        title: game.title,
+        description: game.description,
+        platforms: game.platforms,
+        image: game.image,
+        body: Faker::JapaneseMedia::StudioGhibli.quote
+      )
+      p n.errors.full_messages
+    end
   end
   p "There are now #{Note.count} notes"
 end
