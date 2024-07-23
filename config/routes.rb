@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "users#show"
+  root "users#nil"
   devise_for :users
 
   resources :notes
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # This is a blank app! Pick your first screen, build out the RCAV, and go from there. E.g.:
 
-  # destroy "/users/sign_out" => "users#destroy"
+  get "/:username" => "users#show", as: :user
   
   
 
