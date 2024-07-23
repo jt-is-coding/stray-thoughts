@@ -40,7 +40,7 @@ task({ :sample_data => :environment }) do
   p "There are now #{Game.count} games"
 
   users = User.all
-  p users.at(0).username
+  
   users.each do |user|
     rand(1..3).times do
       game = Game.all.sample
