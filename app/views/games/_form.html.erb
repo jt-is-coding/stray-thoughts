@@ -13,27 +13,27 @@
 
   <div>
     <%= form.label :title, style: "display: block" %>
-    <%= form.hidden_field :title %>
+    <%= form.text_field :title, value: @title %>
   </div>
 
   <div>
     <%= form.label :image, style: "display: block" %>
-    <%= form.hidden_field :image %>
+    <%= form.text_field :image, value: @image_icon %>
   </div>
 
   <div>
     <%= form.label :platforms, style: "display: block" %>
-    <%= form.hidden_field :platforms %>
+    <%= form.text_field :platforms, value: @platforms_string %>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.hidden_field :description %>
+    <%= form.text_area :description, value: @description %>
   </div>
 
   <div>
     <%= form.label :api_id, style: "display: block" %>
-    <%= form.hidden_field :api_id %>
+    <%= form.number_field :api_id, value: @api_id %>
   </div>
 
   <div>
