@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  root "users#home"
+  devise_for :users
+
   resources :notes
   resources :games
-  devise_for :users
 
   # This is a blank app! Pick your first screen, build out the RCAV, and go from there. E.g.:
 
-  # get "/your_first_screen" => "pages#first"
+  get "/search" => "games#home"
+  get "/search/:year" => "games#search"
+  get "/:username" => "users#show", as: :user
   
+  
+
 end

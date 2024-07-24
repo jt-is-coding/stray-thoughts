@@ -8,12 +8,19 @@ task({ :sample_data => :environment }) do
     User.destroy_all
   end
 
-  10.times do
-    name = Faker::Name.first_name
+  usernames = []
+  usernames << "alice"
+  usernames << "bob"
+
+  8.times do
+    usernames << Faker::Name.first_name
+  end
+
+  usernames.each do |username|
     u = User.create(
-      email: "#{name}@example.com",
+      email: "#{username}@example.com",
       password: "password",
-      username: name
+      username: username.downcase
       )
       p u.errors.full_messages
   end
@@ -32,18 +39,22 @@ task({ :sample_data => :environment }) do
   end
   p "There are now #{Game.count} games"
 
-  5.times do
-    game = Game.all.sample
-    n = Note.create(
-      author: User.all.sample,
-      parent: game,
-      title: game.title,
-      description: game.description,
-      platforms: game.platforms,
-      image: game.image,
-      body: Faker::JapaneseMedia::StudioGhibli.quote
-    )
-    p n.errors.full_messages
+  users = User.all
+  
+  users.each do |user|
+    rand(1..3).times do
+      game = Game.all.sample
+      n = Note.create(
+        author: user,
+        parent: game,
+        title: game.title,
+        description: game.description,
+        platforms: game.platforms,
+        image: game.image,
+        body: Faker::JapaneseMedia::StudioGhibli.quote
+      )
+      p n.errors.full_messages
+    end
   end
   p "There are now #{Note.count} notes"
 end
