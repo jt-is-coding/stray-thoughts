@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
   before_action :set_game, only: %i[ show edit update destroy ]
-  giant_bomb_key = ENV.fetch("GIANT_BOMB_KEY")
 
   # GET /games or /games.json
   def index

@@ -426,6 +426,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  dotenv
   dotenv-rails
   draft_generators
   draft_matchers
