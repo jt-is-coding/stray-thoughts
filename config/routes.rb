@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # This is a blank app! Pick your first screen, build out the RCAV, and go from there. E.g.:
 
   get "/search" => "games#search"
+  get "/search/:year" => "games#search"
   get "/:username" => "users#show", as: :user
   
   

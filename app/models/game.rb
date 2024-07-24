@@ -16,4 +16,5 @@ class Game < ApplicationRecord
 
   validates :api_id, presence: true, uniqueness: true
   validates :title, presence: true
+
 end
