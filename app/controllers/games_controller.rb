@@ -19,9 +19,10 @@ class GamesController < ApplicationController
   def edit
   end
 
-  def search
+  def home
+  end
 
-    
+  def search
     @game_list = []
     user_year = params.fetch("year")
 

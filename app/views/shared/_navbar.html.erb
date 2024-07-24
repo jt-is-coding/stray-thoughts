@@ -5,6 +5,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       
       <ul class="navbar-nav">
+
+        <li>
+          <%= link_to "Go to search page", "/search", class: "nav-link" %>
+        </li>
+
         <% if user_signed_in? %>
 
           <li class="nav-item">
