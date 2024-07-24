@@ -1,17 +1,23 @@
 <div id="<%= dom_id note %>">
   <p>
-    <strong>Body:</strong>
-    <%= note.body %>
-  </p>
-
-  <p>
-    <strong>Author:</strong>
-    <%= note.author.username %>
-  </p>
-
-  <p>
-    <strong>Parent:</strong>
+    <strong>Title:</strong>
     <%= note.parent.title %>
   </p>
 
+  <%= image_tag(note.image, size: 300) %>
+
+  <p>
+    <strong>Platforms:</strong>
+    <%= note.platforms %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= note.description %>
+  </p>
+
+  <p>
+    <strong>Body:</strong>
+    <%= note.body %>
+  </p>
 </div>

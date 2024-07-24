@@ -9,6 +9,5 @@ Rails.application.routes.draw do
 
   get "/search" => "games#home"
   get "/search/:year" => "games#search"
-  get "/:username" => "users#show", as: :user
 
 end
