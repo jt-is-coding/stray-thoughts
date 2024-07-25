@@ -1,0 +1,18 @@
+<div id="<%= dom_id note %>">
+  <p>
+    <strong>Title:</strong>
+    <%= note.parent.title %>
+  </p>
+
+  <%= image_tag(note.parent.image, size: 300) %>
+
+  <p>
+    <strong>Platforms:</strong>
+    <%= note.parent.platforms %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= note.parent.description %>
+  </p>
+</div>

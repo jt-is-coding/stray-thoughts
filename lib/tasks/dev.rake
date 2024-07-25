@@ -31,7 +31,7 @@ task({ :sample_data => :environment }) do
     g = Game.create(
       title: game.title,
       description: game.genre,
-      image: "sample",
+      image: "/assets/segabits-seganet-limp-bizkit.png",
       platforms: game.platform,
       api_id: rand(1000)
     )
