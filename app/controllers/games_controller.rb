@@ -59,10 +59,15 @@ end
     @game = Game.new(game_params)
 
     respond_to do |format|
+      
       if @game.save
         format.html { redirect_to new_game_note_path(@game), notice: "Game was successfully created." }
         format.json { render :show, status: :created, location: @game }
       else
+        if @game.api_id == Game.find_by(api_id: @game.api_id).api_id
+          @game = Game.find_by(api_id: @game.api_id)
+          format.html { redirect_to new_game_note_path(@game), notice: "Game already exists" }
+        end
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @game.errors, status: :unprocessable_entity }
       end

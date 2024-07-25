@@ -47,11 +47,6 @@ task({ :sample_data => :environment }) do
       n = Note.create(
         author: user,
         parent: game,
-        title: game.title,
-        description: game.description,
-        platforms: game.platforms,
-        image: game.image,
-        body: Faker::JapaneseMedia::StudioGhibli.quote
       )
       p n.errors.full_messages
     end
