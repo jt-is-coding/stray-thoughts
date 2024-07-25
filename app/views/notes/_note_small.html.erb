@@ -4,15 +4,15 @@
     <%= note.parent.title %>
   </p>
 
-  <%= image_tag(note.image, size: 300) %>
+  <%= image_tag(note.parent.image, size: 300) %>
 
   <p>
     <strong>Platforms:</strong>
-    <%= note.platforms %>
+    <%= note.parent.platforms %>
   </p>
 
   <p>
     <strong>Description:</strong>
-    <%= note.description %>
+    <%= note.parent.description %>
   </p>
 </div>
