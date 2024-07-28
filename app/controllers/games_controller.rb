@@ -19,13 +19,13 @@ class GamesController < ApplicationController
   def edit
   end
 
-  def home
+  def search_home
   end
 
-  def search
+  def search_results
     @game = Game.new
     @game_list = []
-    user_year = params.fetch("year")
+    user_year = params.fetch(:year)
 
     if user_year.to_i > 2023 || user_year.to_i < 1972
       user_year = rand(1972..2023)
