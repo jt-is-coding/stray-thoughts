@@ -19,13 +19,13 @@ class GamesController < ApplicationController
   def edit
   end
 
-  def home
+  def search_home
   end
 
-  def search
+  def search_results
     @game = Game.new
     @game_list = []
-    user_year = params.fetch("year")
+    user_year = params.fetch(:year)
 
     if user_year.to_i > 2023 || user_year.to_i < 1972
       user_year = rand(1972..2023)
@@ -59,10 +59,15 @@ end
     @game = Game.new(game_params)
 
     respond_to do |format|
+      
       if @game.save
         format.html { redirect_to new_game_note_path(@game), notice: "Game was successfully created." }
         format.json { render :show, status: :created, location: @game }
       else
+        if @game.api_id == Game.find_by(api_id: @game.api_id).api_id
+          @game = Game.find_by(api_id: @game.api_id)
+          format.html { redirect_to new_game_note_path(@game), notice: "Game already exists" }
+        end
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @game.errors, status: :unprocessable_entity }
       end
