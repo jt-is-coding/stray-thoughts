@@ -3,10 +3,9 @@
 <h1>Notes</h1>
 
 <div id="notes">
-  <% @notes.each do |note| %>
-    <%= render partial: "/notes/note_small", locals: { note: note } %>
-    <p>
-      <%= link_to "Show this note", game_note_path(note.parent, note) %>
-    </p>
-  <% end %>
+    <% @notes.each do |note| %>
+  <div class="card m-2 ps-1 ">
+      <%= render partial: "/notes/note_small", locals: { note: note } %>
+  </div>
+    <% end %>
 </div>

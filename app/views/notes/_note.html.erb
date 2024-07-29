@@ -1,22 +1,30 @@
 <div id="<%= dom_id note %>">
-  <p>
-    <strong>Title:</strong>
-    <%= note.parent.title %>
-  </p>
 
-  <%= image_tag(note.parent.image, size: 300) %>
+  <h2><%= note.parent.title %></h2>
 
   <p>
-    <strong>Platforms:</strong>
-    <%= note.parent.platforms %>
+    <button class="btn btn-dark" data-bs-toggle="collapse" href="#collapseInfo">Show info</button>
   </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= note.parent.description %>
-  </p>
+  <div class="collapse" id="collapseInfo">
+    <div>
+      <%= image_tag(note.parent.image, size: 300) %>
 
+      <p>
+        <strong>Platforms:</strong>
+        <%= note.parent.platforms %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= note.parent.description %>
+      </p>
+
+    </div>
+  </div>
+  
   <p class="trix-content">
     <%= note.content %>
-  </p>
+  </p> 
+
 </div>
