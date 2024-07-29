@@ -17,4 +17,10 @@
       <%= note.parent.description %>
     </p>
   </div>
+
+  <div class="justify-content-end ms-5">
+      <%= link_to game_note_path(note.parent, note) do %>
+        <i class="stretched-link"></i>
+      <% end %>
+  </div>
 </div>

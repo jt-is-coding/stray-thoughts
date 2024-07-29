@@ -7,20 +7,7 @@
   </p>
 
   <div class="collapse" id="collapseInfo">
-    <div>
-      <%= image_tag(note.parent.image, size: 300) %>
-
-      <p>
-        <strong>Platforms:</strong>
-        <%= note.parent.platforms %>
-      </p>
-
-      <p>
-        <strong>Description:</strong>
-        <%= note.parent.description %>
-      </p>
-
-    </div>
+    <%= render partial: "/notes/note_small", locals: { note: note } %>
   </div>
   
   <p class="trix-content">
