@@ -14,9 +14,13 @@
  *= require_self
  */
 
+ .height_100 {
+  position: absolute;
+ }
+
  .note_thumbnail {
-  height: 150px;
-  width: auto;
+  max-height: 20vh;
+  max-width: 20vh;
  }
 
  .search_image {

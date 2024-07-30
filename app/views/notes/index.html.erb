@@ -2,10 +2,10 @@
 
 <h1>Notes</h1>
 
-<div id="notes">
+<div id="notes" class="height_100">
   <% @notes.each do |note| %>
     <div class="card m-2 ps-1 ">
-      <%= render partial: "/notes/note_small_clickable", locals: { note: note } %>
+      <%= render partial: "/notes/note_small", locals: { note: note } %>
     </div>
   <% end %>
 </div>
