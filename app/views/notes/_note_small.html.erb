@@ -5,9 +5,11 @@
 
     <%= image_tag(note.parent.image, class: "card-img-top") %>   
     
-    <h1 class="card-title text-center">
-      <%= note.parent.title %>
-    </h1>
+    <% if url.include?("games") == false %>
+      <h1 class="card-title text-center">
+        <%= note.parent.title %>
+      </h1>
+    <% end %>
 
     <ul class="list-group list-group-flush">
 
@@ -17,19 +19,23 @@
         </i>
       </li>
 
-      <li class="list-group-item">
-        <%= note.parent.description.truncate_words(10) %>
-      </li>
+      <% if url.include?("games") == false %>
+        <li class="list-group-item">
+          <%= note.parent.description.truncate_words(10) %>
+        </li>
+      <% else %>
+        <li class="list-group-item">
+          <%= note.parent.description %>
+        </li>
+      <% end %>
 
     </ul>
 
     <% if url.include?("games") == false %>
-      <div class="">
-          <%= link_to game_note_path(note.parent, note) do %>
-            <i class="stretched-link"></i>
-            <i class="fa-solid fa-chevron-right fa-lg position-absolute top-50 end-0 icon_color"></i>
-          <% end %>
-      </div>
+      <%= link_to game_note_path(note.parent, note) do %>
+        <i class="stretched-link"></i>
+        <i class="fa-solid fa-chevron-right fa-lg position-absolute top-50 end-0 icon_color"></i>
+      <% end %>
     <% end %>
   </div>
 </div>

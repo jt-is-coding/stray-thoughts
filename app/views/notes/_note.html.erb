@@ -1,17 +1,19 @@
 <div id="<%= dom_id note %>">
 
-  <div class="d-flex">
+  <div class="d-flex flex-column">
     <button class="button" data-bs-toggle="collapse" href="#collapseInfo">
       <h2><%= note.parent.title %></h2>
     </button>
-  </div>
-
-  <div class="collapse show" id="collapseInfo">
-    <%= render partial: "/notes/note_small", locals: { note: note } %>
-  </div>
   
-  <p class="trix-content">
-    <%= note.content %>
-  </p> 
+    <div class="d-flex flex-row">
+      <div class="collapse show" id="collapseInfo">
+        <%= render partial: "/notes/note_small", locals: { note: note } %>
+      </div>
+      
+      <p class="trix-content ps-2">
+        <%= note.content %>
+      </p> 
+    </div>
+  </div>
 
 </div>
