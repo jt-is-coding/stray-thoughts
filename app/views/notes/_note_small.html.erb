@@ -1,33 +1,35 @@
 <% url = request.original_url.split("/") %>
 
-<div id="<%= dom_id note %>" class="d-flex flex-wrap">
-  <%= image_tag(note.parent.image, class: "note_thumbnail rounded ms-2 my-1") %>
+<div id="<%= dom_id note %>" class="d-flex align-items-center card" style="max-width: 40vh;">
+  <div class="card-body">
 
-  <div class="d-flex flex-column justify-content-center ms-2">
-    <p>
-      <strong>
-        <%= note.parent.title %>
-      </strong>
-    </p>
+    <%= image_tag(note.parent.image, class: "card-img-top") %>   
+    
+    <h1 class="card-title text-center">
+      <%= note.parent.title %>
+    </h1>
 
-    <p>
-      <i>
-        <%= note.parent.platforms %>
-      </i>
-    </p>
+    <ul class="list-group list-group-flush">
 
-    <p>
-      <%= note.parent.description.truncate_words(10) %>
-    </p>
+      <li class="list-group-item">
+        <i>
+          <%= note.parent.platforms %>
+        </i>
+      </li>
 
+      <li class="list-group-item">
+        <%= note.parent.description.truncate_words(10) %>
+      </li>
 
+    </ul>
+
+    <% if url.include?("games") == false %>
+      <div class="">
+          <%= link_to game_note_path(note.parent, note) do %>
+            <i class="stretched-link"></i>
+            <i class="fa-solid fa-chevron-right fa-lg position-absolute top-50 end-0 icon_color"></i>
+          <% end %>
+      </div>
+    <% end %>
   </div>
-  <% if url.include?("games") == false %>
-    <div class="">
-        <%= link_to game_note_path(note.parent, note) do %>
-          <i class="stretched-link"></i>
-          <i class="fa-solid fa-chevron-right fa-lg position-absolute top-50 end-0 icon_color"></i>
-        <% end %>
-    </div>
-  <% end %>
 </div>

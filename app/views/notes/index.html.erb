@@ -2,9 +2,9 @@
 
 <h1 class="text-center">Notes</h1>
 
-<div id="notes">
+<div id="notes" class="d-flex flex-wrap justify-content-center">
   <% @notes.each do |note| %>
-    <div class="card m-2 ps-1 ">
+    <div class="pt-2 ps-2">
       <%= render partial: "/notes/note_small", locals: { note: note } %>
     </div>
   <% end %>

@@ -32,19 +32,20 @@
     </h1>
 
     <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      Available on: <%= @platforms_string %>
-    </li>
+      <li class="list-group-item">
+        Available on: <%= @platforms_string %>
+      </li>
 
-    <% if selected_game.fetch("deck") == nil%>
-      <li class="list-group-item">
-        <%= @description = "Sorry, no description available" %>
-      </li>
-    <% else %>
-      <li class="list-group-item">
-        <%= @description = selected_game.fetch("deck") %>
-      </li>
-    <% end %>
+      <% if selected_game.fetch("deck") == nil%>
+        <li class="list-group-item">
+          <%= @description = "Sorry, no description available" %>
+        </li>
+      <% else %>
+        <li class="list-group-item">
+          <%= @description = selected_game.fetch("deck") %>
+        </li>
+      <% end %>
+      
     </ul>
 
     <div>
