@@ -18,3 +18,13 @@
   height: 150px;
   width: auto;
  }
+
+ .search_image {
+  height: 50%;
+  width: auto;
+ }
+
+ .button {
+  background-color: white;
+  border: none;
+ }
