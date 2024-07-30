@@ -11,7 +11,9 @@
     </p>
 
     <p>
-      <i><%= note.parent.platforms %></i>
+      <i>
+        <%= note.parent.platforms %>
+      </i>
     </p>
 
     <p>
@@ -19,12 +21,13 @@
     </p>
 
 
+  </div>
   <% if url.include?("games") == false %>
-    <div class="justify-content-end ms-5">
+    <div class="">
         <%= link_to game_note_path(note.parent, note) do %>
           <i class="stretched-link"></i>
+          <i class="fa-solid fa-chevron-right fa-lg position-absolute top-50 end-0 icon_color"></i>
         <% end %>
     </div>
   <% end %>
-  </div>
 </div>
