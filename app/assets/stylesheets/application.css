@@ -24,8 +24,8 @@
  }
 
  .search_image {
-  height: 50%;
-  width: auto;
+  max-height: 40vh;
+  max-width: 40vh;
  }
 
  .button {

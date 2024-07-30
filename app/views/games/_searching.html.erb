@@ -3,10 +3,12 @@
 <% testing = nil %>
 <% selected_game = @game_list.sample %>
 <% platforms_array = selected_game.fetch("platforms") %>
+
 <% platforms_array.each do |loop| %>
   <% testing = loop %>
   <% platforms.push(testing.fetch("name")) %>
 <% end %>
+
 <% platforms.each do |name| %>
   <% if name == platforms.last %>
     <% @platforms_string = @platforms_string + name%>
@@ -14,33 +16,39 @@
     <% @platforms_string = @platforms_string + name + " / " %>
   <% end %>
 <% end %>
+
 <% image = selected_game.fetch("image") %>
 <% @image_icon = image.fetch("original_url") %>
+<% @api_id = selected_game.fetch("id") %>
 
-<div class="d-flex flex-column align-items-center">
+<div class="d-flex flex-column align-items-center card" style="max-width: 40vh;">
+  <div class="card-body">
 
-  <h1>
-    <%= @title = selected_game.fetch("name")%>
-  </h1>
 
-  <%= image_tag(@image_icon, class: "search_image") %>
+    <%= image_tag(@image_icon, class: "card-img-top") %>
 
-  <p>
-    Available on: <%= @platforms_string %>
-  </p>
+    <h1 class="card-title text-center">
+      <%= @title = selected_game.fetch("name")%>
+    </h1>
 
-  <p>
-    API ID: <%= @api_id = selected_game.fetch("id") %>
-  </p>
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      Available on: <%= @platforms_string %>
+    </li>
 
-  <% if selected_game.fetch("deck") == nil%>
-    <p>
-      <%= @description = "Sorry, no description available" %>
-    </p>
-  <% else %>
-    <p>
-      <%= @description = selected_game.fetch("deck") %>
-    </p>
-  <% end %>
-  
+    <% if selected_game.fetch("deck") == nil%>
+      <li class="list-group-item">
+        <%= @description = "Sorry, no description available" %>
+      </li>
+    <% else %>
+      <li class="list-group-item">
+        <%= @description = selected_game.fetch("deck") %>
+      </li>
+    <% end %>
+    </ul>
+
+    <div>
+      <%= render "form", game: @game %>
+    </div>
+  </div>
 </div>
