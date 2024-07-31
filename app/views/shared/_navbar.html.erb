@@ -1,41 +1,11 @@
-<nav class="navbar navbar-expand-lg card_background mb-4">
+<nav class="navbar navbar-expand bg-body-tertiary mb-4">
   <div class="container">
-    <%= link_to "Home", root_path, class: "navbar_brand" %>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      
-      <ul class="navbar-nav">
 
-        <li>
-          <%= link_to "Go to search page", "/search", class: "nav-link" %>
-        </li>
+    <%= link_to "Home", root_path, class: "navbar_brand fs-5 text_color" %>
 
-        <% if user_signed_in? %>
-
-          <li class="nav-item">
-            <%= link_to "#{current_user.username}'s notes", notes_path, class: "nav-link" %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to "Edit #{current_user.username}", edit_user_registration_path, class: "nav-link" %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-
-        <% else %>
-
-          <li class="nav-item">
-            <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
-          </li>
-
-          <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-          </li>
-
-        <% end%>
-      </ul>
+    <div id="navbarSupportedContent">
+      <%= render partial: "/shared/navbar_mobile" %>
+      <%= render partial: "/shared/navbar_big" %>
     </div>
   </div>
 </nav>

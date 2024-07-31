@@ -33,10 +33,11 @@
 
  .text_color {
   color: #304463;
+  text-decoration: none;
  }
 
  .home {
-  max-width: 70vh;
+  max-width: 40vh;
  }
  .search_image {
   max-height: 40vh;
@@ -44,7 +45,7 @@
  }
 
  .button {
-  background-color: #FFF8DB;
+  background-color: #FFFFFF;
   border: none;
  }
 

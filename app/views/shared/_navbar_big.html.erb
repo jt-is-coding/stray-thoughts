@@ -1,0 +1,29 @@
+<div class="d-none d-lg-block">
+  <ul class="navbar-nav">
+    <li>
+      <%= link_to "Go to search page", "/search", class: "nav-link" %>
+    </li>
+
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to "#{current_user.username}'s notes", notes_path, class: "nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Edit #{current_user.username}", edit_user_registration_path, class: "nav-link" %>
+      </li>
+        
+      <li class="nav-item">
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+      </li>
+    <% end%>
+  </ul>
+</div>

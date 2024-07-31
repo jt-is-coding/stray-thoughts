@@ -1,31 +1,24 @@
-<div class="text-center text_color">
+<div class="text-center text_color d-flex flex-column px-1 py-2">
   <h1>Tab Buddy</h1>
-  <h2>Discover and Catalogue, <u>all in one tab.</u></h2>
+  <h2>Discover and Catalogue games, <u>all in one tab.</u></h2>
 
-  <br>
+  <p>
+   <strong>New here? Click the button below to get started!</strong>
+  </p>
 
-  <span class="d-flex flex-wrap justify-content-around">
-    <div class="border d-flex flex-column px-1 py-2">
-      <p>
-        <strong>Hello, welcome to Tab Buddy!</strong>
-      </p>
+  <%= link_to search_path do %>
+    <button class="btn btn-primary">Get started</button>
+  <% end %>
+  <%= render partial: "games/search" %>
 
-      <p class="home">
-        I created this as a space for me to discover games that I'm unfamiliar with and catalogue my thoughts, as well as links to articles/videos anything pertaining to the game in question. I often find myself finding something, telling myself I'd like to learn about it, and then quickly losing track of it among the many countless tabs open on my browser. Tab Buddy aims to make learning about different aspects of my favorite hobby more efficient, and I hope to aid others like me with this service. To get started, just toss a year into the form below and see what you can find!
-      </p>
+  <hr>
 
-      <br>
-
-      <span>
-        <%= render partial: "games/search" %>
-      </span>
-
-    </div>
-
-    <div class="d-flex flex-column border">
+  <div>
+    <p>
       <strong>Here's an example of a note!</strong>
-      <%= image_tag("landing_page_example", class: "home") %>
-    </div>
-  </span>
+    </p>
 
+    <%= image_tag("landing_page_example", class: "home") %>
+    
+  </div>
 </div>
