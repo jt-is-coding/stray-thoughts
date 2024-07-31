@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "users#home"
+  root "landing_page#home"
   devise_for :users
 
   resources :games do 

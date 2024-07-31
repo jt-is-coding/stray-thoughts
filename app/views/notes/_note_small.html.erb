@@ -1,17 +1,20 @@
 <% url = request.original_url.split("/") %>
 
 <div id="<%= dom_id note %>" class="d-flex align-items-center card" style="max-width: 40vh;">
-  <div class="card-body">
+  <div class="card-body card_background rounded">
 
     <%= image_tag(note.parent.image, class: "card-img-top") %>   
     
-    <% if url.include?("games") == false %>
-      <h1 class="card-title text-center">
-        <%= note.parent.title %>
-      </h1>
-    <% end %>
 
-    <ul class="list-group list-group-flush">
+    <ul class="list-group list-group-flush rounded-bottom">
+
+      <li class="list-group-item">
+        <% if url.include?("games") == false %>
+          <h1 class="card-title text-center">
+            <%= note.parent.title %>
+          </h1>
+        <% end %>
+      </li>
 
       <li class="list-group-item">
         <i>
