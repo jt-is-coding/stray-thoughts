@@ -1,22 +1,32 @@
 <div id="<%= dom_id note %>">
-  <p>
-    <strong>Title:</strong>
-    <%= note.parent.title %>
-  </p>
 
-  <%= image_tag(note.parent.image, size: 300) %>
+  <div class="d-flex flex-column">
+    <span class="d-flex justify-content-between">
+      <button class="button" data-bs-toggle="collapse" href="#collapseInfo">
+        <h2 class="text-start"><%= note.parent.title %></h2>
+      </button>
+        <span class="d-flex justify-content-between">
+        
+          <%= link_to edit_game_note_path(@note.parent, @note) do %>
+            <i class="fa-solid fa-pen-to-square fa-xl pe-2 icon_color"></i>
+          <% end %>
 
-  <p>
-    <strong>Platforms:</strong>
-    <%= note.parent.platforms %>
-  </p>
+          <%= link_to game_note_path(@note.parent, @note), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa-solid fa-trash fa-xl ps-2 icon_color"></i>
+          <% end %>
+        </span>
+    </span>
 
-  <p>
-    <strong>Description:</strong>
-    <%= note.parent.description %>
-  </p>
 
-  <p class="trix-content">
-    <%= note.content %>
-  </p>
+    <div class="d-flex flex-row">
+      <div class="collapse show" id="collapseInfo">
+        <%= render partial: "/notes/note_small", locals: { note: note } %>
+      </div>
+      
+      <p class="trix-content ps-2">
+        <%= note.content %>
+      </p> 
+    </div>
+  </div>
+
 </div>

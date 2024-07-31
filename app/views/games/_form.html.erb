@@ -12,31 +12,26 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title, value: @title %>
+    <%= form.hidden_field :title, value: @title %>
   </div>
 
   <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image, value: @image_icon %>
+    <%= form.hidden_field :image, value: @image_icon %>
   </div>
 
   <div>
-    <%= form.label :platforms, style: "display: block" %>
-    <%= form.text_field :platforms, value: @platforms_string %>
+    <%= form.hidden_field :platforms, value: @platforms_string %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description, value: @description %>
+    <%= form.hidden_field :description, value: @description %>
   </div>
 
   <div>
-    <%= form.label :api_id, style: "display: block" %>
-    <%= form.number_field :api_id, value: @api_id %>
+    <%= form.hidden_field :api_id, value: @api_id %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Create note" %>
   </div>
 <% end %>

@@ -1,10 +1,6 @@
 <%= form_with(url: "/search/results", method: :get, class: "nav-link") do |form| %>
   <div>
-    <%= form.label :year, style: "display: block" %>
-    <%= form.text_field :year %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.text_field :year, placeholder: "Input a year!" %>
+    <%= form.submit "Search" %>
   </div>
 <% end %>

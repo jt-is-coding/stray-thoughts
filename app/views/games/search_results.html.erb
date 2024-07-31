@@ -1,32 +1,13 @@
-<% platforms = [] %>
-<% @platforms_string = ""%>
-<% testing = nil %>
-<% selected_game = @game_list.sample %>
-<h1><%= @title = selected_game.fetch("name")%></h1>
-<% platforms_array = selected_game.fetch("platforms") %>
-<% platforms_array.each do |loop| %>
-  <% testing = loop %>
-  <% platforms.push(testing.fetch("name")) %>
-<% end %>
-<% platforms.each do |name| %>
-  <% if name == platforms.last %>
-    <% @platforms_string = @platforms_string + name%>
-  <% else %>
-    <% @platforms_string = @platforms_string + name + " / " %>
-  <% end %>
-<% end %>
-<% image = selected_game.fetch("image") %>
-<% @image_icon = image.fetch("original_url") %>
-<img src="<%= @image_icon %>">
-
-<div>
-  <p>Available on: <%= @platforms_string %></p>
-  <p>API ID: <%= @api_id = selected_game.fetch("id") %></p>
-  <% if selected_game.fetch("deck") == nil%>
-    <p><%= @description = "Sorry, no description available" %></p>
-  <% else %>
-    <p><%= @description = selected_game.fetch("deck") %></p>
-  <% end %>
+<div class="text-center">
+  <h3>Search again?</h3>
+  <%= render "search" %>
 </div>
 
-<%= render "form", game: @game %>
+<div class="d-flex flex-wrap justify-content-center">
+<% 3.times do %>
+  <div class="pt-2 ps-2">
+    <%= render "searching" %>
+  </div>
+<% end %>
+</div>
+<br>

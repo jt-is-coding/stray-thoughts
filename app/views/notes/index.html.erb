@@ -1,12 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Notes</h1>
+<h1 class="text-center">Notes</h1>
 
-<div id="notes">
+<div id="notes" class="d-flex flex-wrap justify-content-center">
   <% @notes.each do |note| %>
-    <%= render partial: "/notes/note_small", locals: { note: note } %>
-    <p>
-      <%= link_to "Show this note", game_note_path(note.parent, note) %>
-    </p>
+    <div class="pt-2 ps-2">
+      <%= render partial: "/notes/note_small", locals: { note: note } %>
+    </div>
   <% end %>
 </div>

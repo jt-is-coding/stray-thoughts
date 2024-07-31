@@ -13,3 +13,65 @@
  *= require_tree .
  *= require_self
  */
+
+ .height_100 {
+  position: absolute;
+ }
+
+ .note_thumbnail {
+  max-height: 20vh;
+  max-width: 20vh;
+ }
+ 
+ .background {
+  background-color: #FFF8DB;
+ }
+
+ .card_background {
+  background-color: #7D8ABC;
+ }
+
+ .text_color {
+  color: #304463;
+  text-decoration: none;
+ }
+
+ .home {
+  max-width: 40vh;
+ }
+ .search_image {
+  max-height: 40vh;
+  max-width: 40vh;
+ }
+
+ .button {
+  background-color: #FFFFFF;
+  border: none;
+ }
+
+ .navbar_text_color {
+  color: #FFF8DB;
+ }
+
+ .icon_color {
+  color: #304463;
+ }
+
+ .background--custom {
+  background-image: linear-gradient(90deg, #5BCEFA, #FFFFFF, #F5A9B8);
+  background-size: 300% 300%;
+  animation: gradient 5s alternate infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+  @keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
