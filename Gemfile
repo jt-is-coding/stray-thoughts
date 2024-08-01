@@ -12,8 +12,6 @@ gem "sprockets-rails"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
-gem "http"
-
 gem "aws-sdk-s3", require: false
 
 gem "dotenv", groups: [:development, :test, :production]
