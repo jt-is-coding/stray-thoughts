@@ -13,6 +13,6 @@ services:
           name: db
           property: connectionString
 databases: # this section provides some additional database configuration
-  - name: db
+  - name: stray-thoughts
     plan: free
     ipAllowList: []
