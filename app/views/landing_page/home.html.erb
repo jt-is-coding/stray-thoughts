@@ -1,5 +1,5 @@
 <div class="text-center text_color d-flex flex-column px-1 py-2">
-  <h1>Tab Buddy</h1>
+  <h1>Stray Thoughts</h1>
   <h2>Discover and Catalogue games, <u>all in one tab.</u></h2>
 
   <p>
@@ -9,7 +9,6 @@
   <%= link_to search_path do %>
     <button class="btn btn-primary">Get started</button>
   <% end %>
-  <%= render partial: "games/search" %>
 
   <hr>
 
@@ -18,7 +17,7 @@
       <strong>Here's an example of a note!</strong>
     </p>
 
-    <%= image_tag("landing_page_example", class: "home") %>
+    <%= render "notes/note", note: @note %>
     
   </div>
 </div>

@@ -6,14 +6,17 @@
         <h2 class="text-start"><%= note.parent.title %></h2>
       </button>
         <span class="d-flex justify-content-between">
-        
-          <%= link_to edit_game_note_path(@note.parent, @note) do %>
-            <i class="fa-solid fa-pen-to-square fa-xl pe-2 icon_color"></i>
-          <% end %>
+      
+          <% if current_user == @note.author %>
+            <%= link_to edit_game_note_path(@note.parent, @note) do %>
+              <i class="fa-solid fa-pen-to-square fa-xl pe-2 icon_color"></i>
+            <% end %>
 
-          <%= link_to game_note_path(@note.parent, @note), method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="fa-solid fa-trash fa-xl ps-2 icon_color"></i>
+            <%= link_to game_note_path(@note.parent, @note), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="fa-solid fa-trash fa-xl ps-2 icon_color"></i>
+            <% end %>
           <% end %>
+          
         </span>
     </span>
 
