@@ -24,11 +24,11 @@
  }
  
  .background {
-  background-color: #FFF8DB;
+  background-color: #f7fcf3;
  }
 
  .card_background {
-  background-color: #7D8ABC;
+  background-color: #daf6da;
  }
 
  .text_color {
@@ -45,7 +45,12 @@
  }
 
  .button {
-  background-color: #FFFFFF;
+  background-color: #86d430;
+  border: none;
+ }
+
+ .button_invisible {
+  background-color: #f7fcf3;
   border: none;
  }
 
