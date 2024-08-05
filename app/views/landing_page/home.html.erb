@@ -1,16 +1,50 @@
 <div class="text-center text_color d-flex flex-column px-1 py-2">
+
   <h1>Stray Thoughts</h1>
   <h2>Discover and Catalogue games, <u>all in one tab.</u></h2>
+  
+  <br>
+  
+  <div class="d-flex justify-content-around accent border rounded pt-3">
+    <ul>
+      <h3>Discover</h3>
+      <li>
+        <p>Search through a vast database of games, courtesy of <%= link_to("Giant Bomb", "https://www.giantbomb.com/") %></p>
+      </li>
+      <li>
+        <p>Input a year at the top of the page to conduct a search, which will display 3 random games from the given year</p>
+      </li>
+      <li>
+        <p>Games will be displayed with their title, an image (if available), the platforms they're available on, as well as a short description (if available)</p>
+      </li>
+    </ul>
 
+    <ul>
+      <h3>Catalogue</h3>
+      <li>
+        <p>Once you find a game you're interested in, you can create a Note based off of it, saving all the sample data for easy access</p>
+      </li>
+      <li>
+        <p>Notes can be as simple as you like; use them to jot down your thoughts, or to contain handy links and images</p>
+      </li>
+      <li>
+        <p>Notes can be viewed and edited from your notebook, linked at the top of the page</p>
+      </li>
+    </ul>
+  </div>
+
+  <br>
+   
   <p>
-   <strong>New here? Click the button below to get started!</strong>
+    <strong>New here? Click the button below to get started!</strong>
   </p>
-
   <%= link_to search_path do %>
     <button class="btn btn-outline-dark">Get started</button>
   <% end %>
 
+  <br>
   <hr>
+  <br>
 
   <div>
     <p>
