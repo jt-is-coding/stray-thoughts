@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope:700|Manrope:400');
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -24,11 +25,32 @@
  }
  
  .background {
-  background-color: #FFF8DB;
+  background-color: #f7fcf3;
  }
 
- .card_background {
-  background-color: #7D8ABC;
+ .primary {
+   background-color: #85d530;
+   background: linear-gradient(40deg, rgba(112,215,2,1) 0%, rgba(133,213,48,1) 8%, rgba(176,245,104,1) 100%);
+  }
+
+  .secondary {
+   background-color: #daf6da;
+  }
+
+  .second_secondary {
+    background-color: #95e99e;
+    background: linear-gradient(177deg, rgba(218,246,218,1) 0%, rgb(168, 236, 104) 60%, rgba(159,230,85,1) 100%);
+  }
+
+  .accent {
+    background-color: #68df93;
+    background: linear-gradient(176deg, rgba(218,246,218,1) 0%, rgb(126, 255, 174) 90%, rgb(108, 233, 154) 100%);
+  }
+  
+ .card:hover {
+  transition: transform .25s;
+  transform: scale(1.05);
+  box-shadow: 0px 2px 2px;
  }
 
  .text_color {
@@ -39,13 +61,24 @@
  .home {
   max-width: 40vh;
  }
+ 
  .search_image {
   max-height: 40vh;
   max-width: 40vh;
  }
 
  .button {
-  background-color: #FFFFFF;
+  background-color: #86d430;
+  border: none;
+ }
+
+ .btn:hover {
+  transition: transform .25s;
+  transform: scale(1.05);
+ }
+
+ .button_invisible {
+  background-color: #f7fcf3;
   border: none;
  }
 
@@ -57,21 +90,36 @@
   color: #304463;
  }
 
- .background--custom {
-  background-image: linear-gradient(90deg, #5BCEFA, #FFFFFF, #F5A9B8);
-  background-size: 300% 300%;
-  animation: gradient 5s alternate infinite;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-  @keyframes gradient {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 100%;
-  }
-}
+ body {
+  font-family: 'Manrope';
+  font-weight: 400;
+ }
+
+ h1, h2, h3, h4, h5 {
+  font-family: 'Manrope';
+  font-weight: 700;
+ }
+
+ strong {
+  font-family: 'Manrope';
+  font-weight: 400;
+ }
+
+ .navbar {
+  font-family: 'Manrope';
+  font-weight: 400;
+ }
+
+ html {font-size: 100%;} /* 16px */
+
+ h1 {font-size: 4.210rem; /* 67.36px */}
+
+ h2 {font-size: 3.158rem; /* 50.56px */}
+
+ h3 {font-size: 2.369rem; /* 37.92px */}
+
+ h4 {font-size: 1.777rem; /* 28.48px */}
+
+ h5 {font-size: 1.333rem; /* 21.28px */}
+
+ small {font-size: 0.750rem; /* 12px */}

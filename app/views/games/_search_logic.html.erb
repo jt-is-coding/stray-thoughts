@@ -1,0 +1,22 @@
+<% @platforms = [] %>
+<% @platforms_string = ""%>
+<% @testing = nil %>
+<% @selected_game = @game_list.sample %>
+<% @platforms_array = @selected_game.fetch("platforms") %>
+
+<% @platforms_array.each do |loop| %>
+  <% @testing = loop %>
+  <% @platforms.push(@testing.fetch("name")) %>
+<% end %>
+
+<% @platforms.each do |name| %>
+  <% if name == @platforms.last %>
+    <% @platforms_string = @platforms_string + name%>
+  <% else %>
+    <% @platforms_string = @platforms_string + name + " / " %>
+  <% end %>
+<% end %>
+
+<% @image = @selected_game.fetch("image") %>
+<% @image_icon = @image.fetch("original_url") %>
+<% @api_id = @selected_game.fetch("id") %>
