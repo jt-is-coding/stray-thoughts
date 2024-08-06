@@ -23,7 +23,7 @@
     <%= form.hidden_field :parent_id, value: @game.id %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="pt-1">
+    <%= form.submit("Update", class: "btn btn-outline-dark") %>
   </div>
 <% end %>

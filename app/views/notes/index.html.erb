@@ -4,7 +4,7 @@
 
 <div id="notes" class="d-flex flex-wrap justify-content-center">
   <% @notes.each do |note| %>
-    <div class="pt-4 ps-3">
+    <div class="pt-2 pb-3 ps-3">
       <%= render partial: "/notes/note_small", locals: { note: note } %>
     </div>
   <% end %>
