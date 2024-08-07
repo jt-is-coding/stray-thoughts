@@ -1,92 +1,35 @@
-# Rails Template
+# Stray Thoughts
 
-This is a base Ruby on Rails repository configured for learning with Codespaces (and Gitpod).
+Stray Thoughts is a platformed designed to assist users Discover and Catalogue games in a single tab. Searching (utilizing Giant Bomb's API) via a given year produces three games at random, which users can then create Notes on. Notes will contain the data displayed via the API search, in addition to a Trix-Content form that can contain text, links, and images.
 
+
+## Technologies Used
 - Ruby version: `3.2.1`
 - Rails version: `7.1.3.3`
+- Bootstrap 5
 
+## Functionality
 
-We've added additional Ruby gems and other software that aren't automatically available in a new Rails app, and configured 
+### Searh
 
-### UJS and Turbo
+Once a user has created an account and signed in, they can search for games using the search bar at the top of the page. On mobile, they will need to use the Navigation dropdown to go to the search page manually. From there, searching is as easy as inputting a year and seeing what pops up!
+![alt text](app/assets/images/search.png)
 
-In Rails version 7, support for Unobtrusive JavaScript (UJS) is not the default. Rather, [this has been replaced with Turbo](https://guides.rubyonrails.org/working_with_javascript_in_rails.html#turbo).
+### Notes
 
-However, in AppDev, we typically want to first demonstrate UJS and then enable Turbo manually when we want it.
+When a user finds a game they're interested in, they can create a Note. Notes will contain all the information given by the API search, in addition to having a Trix-Content form that users can fill out with text, links, and images. Currently images can only be copy/pasted in, rather than using the attachment option on the Trix-Content form.
+![alt text](app/assets/images/note.png)
 
-Therefore, UJS has been pre-configured here with these steps: 
+## Entity Data Relationship
 
-- Pin UJS + jQuery in `config/importmap.rb` by running:
+![alt text](app/assets/images/erd.png)
 
-    ```
-    % ./bin/importmap pin @rails/ujs
-    % ./bin/importmap pin jquery
-    ```
+## Installation
 
-- Add UJS + jQuery via:
-
-    ```js
-    // app/javascript/application.js
-    import jquery from "jquery";
-    window.jQuery = jquery;
-    window.$ = jquery;
-    import Rails from "@rails/ujs"
-    Rails.start();
-    ```
-
-UJS and Turbo can co-exist side-by-side with [these instructions, which we already implemented here](https://github.com/hotwired/turbo-rails/blob/main/UPGRADING.md#upgrading-from-rails-ujs--turbolinks-to-turbo).
-
-By default, Turbo is disabled via:
-
-```js
-// app/javascript/application.js
-import { Turbo } from "@hotwired/turbo-rails"
-Turbo.session.drive = false
+To install (and run), enter the following in a terminal:
 ```
-
-Set it to `true` to enable Turbo everywhere, or you can use `data-turbo="true"` to enable Drive on a per-element basis while leaving it globally `false`.
-
-### Additional gems:
-
-- [`appdev_support`](https://github.com/firstdraft/appdev_support)
-- [`annotate`](https://github.com/ctran/annotate_models)
-- [`awesome_print`](https://github.com/awesome-print/awesome_print)
-- [`better_errors`](https://github.com/BetterErrors/better_errors)
-- [`binding_of_caller`](https://github.com/banister/binding_of_caller)
-- [`dotenv-rails`](https://github.com/bkeepers/dotenv)
-- [`draft_generators`](https://github.com/firstdraft/draft_generators/)
-- [`draft_matchers`](https://github.com/jelaniwoods/draft_matchers/)
-- [`devise`](https://github.com/heartcombo/devise)
-- [`faker`](https://github.com/faker-ruby/faker)
-- [`grade_runner`](https://github.com/firstdraft/grade_runner/)
-- [`htmlbeautifier`](https://github.com/threedaymonk/htmlbeautifier/)
-- [`http`](https://github.com/httprb/http)
-- [`pry_rails`](https://github.com/pry/pry-rails)
-- [`rails_db`](https://github.com/igorkasyanchuk/rails_db)
-- [`rails-erd`](https://github.com/voormedia/rails-erd)
-- [`rspec-html-matchers`](https://github.com/kucaahbe/rspec-html-matchers)
-- [`rspec-rails`](https://github.com/rspec/rspec-rails)
-- [`rufo`](https://github.com/ruby-formatter/rufo)
-- [`specs_to_readme`](https://github.com/firstdraft/specs_to_readme)
-- [`table_print`](https://github.com/arches/table_print)
-- [`web_git`](https://github.com/firstdraft/web_git)
-- [`webmock`](https://github.com/bblimke/webmock)
-
-### Additional software:
-- OS Ubuntu 20.04.5 LTS
-- Chromedriver
-- Fly.io's `flyctl`
-- Google Chrome (headless browser)
-- Graphviz
-- Node JS 18
-- NPM 8.19.3
-- Postgresql 12
-- Redis
-- Yarn
-
-### VS Code extensions:
-- vortizhe.simple-ruby-erb
-- mbessey.vscode-rufo
-- aliariff.vscode-erb-beautify
-- eamodio.gitlens
-- setobiralo.erb-commenter
+bundle install
+rails db:create
+rails db:migrate
+bin/dev
+```
