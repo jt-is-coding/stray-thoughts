@@ -1,6 +1,7 @@
 # Stray Thoughts
 Stray Thoughts is a platform designed to assist users Discover and Catalogue games in a single tab.
 
+## Table of Contents
 * 1. [Technologies Used](#TechnologiesUsed)
 * 2. [Functionality](#Functionality)
 * 3. [Search](#Search)
