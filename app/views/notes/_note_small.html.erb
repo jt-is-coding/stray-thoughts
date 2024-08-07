@@ -6,9 +6,9 @@
     <%= image_tag(note.parent.image, class: "card-img-top pb-3") %>   
     
     <% if url.include?("notes") == true && url.include?("games") == false %>
-      <h1 class="card-title">
+      <h3 class="card-title">
         <%= note.parent.title %>
-      </h1>
+      </h3>
       <hr>
     <% end %>
     
