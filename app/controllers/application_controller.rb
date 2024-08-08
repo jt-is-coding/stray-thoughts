@@ -18,7 +18,12 @@ class ApplicationController < ActionController::Base
   private
 
     def user_not_authorized
-      flash[:alert] = "You are not authorized to perform this action."
+
+      if current_user == nil
+        flash[:alert] = "You must be signed in to search!"
+      else
+        flash[:alert] = "You are not authorized to perform this action."
+      end
 
       redirect_back fallback_location: root_url
     end

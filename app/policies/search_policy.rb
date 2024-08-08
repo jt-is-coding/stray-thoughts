@@ -6,9 +6,7 @@ class SearchPolicy < ApplicationPolicy
   end
   
   def search_home?
-    if @user != nil
-      true
-    end
+    user != nil
   end
 
   def search_results?
