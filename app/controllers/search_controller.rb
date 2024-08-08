@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  
 
   def search_home
   end
