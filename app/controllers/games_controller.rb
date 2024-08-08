@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: %i[ show edit update destroy ]
+  before_action { authorize(@game || Game) }
 
   # GET /games or /games.json
   def index
