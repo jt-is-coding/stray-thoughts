@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :notes, only: [:index]
 
-  get "/search" => "games#search_home"
-  get "/search/results" => "games#search_results"
+  get "/search" => "search#search_home"
+  get "/search/results" => "search#search_results"
 
 end

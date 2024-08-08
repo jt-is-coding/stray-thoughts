@@ -1,4 +1,4 @@
-<%= render "search_logic" %>
+<%= render "extract_info" %>
 
 <div class="d-flex flex-column align-items-center card" style="max-width: 40vh;">
   <div class="card-body second_secondary rounded text-center">
@@ -22,7 +22,7 @@
     <% end %>
 
     <div class="pt-3">
-      <%= render "form", game: @game %>
+      <%= render "games/form", game: @game %>
     </div>
   </div>
 </div>
