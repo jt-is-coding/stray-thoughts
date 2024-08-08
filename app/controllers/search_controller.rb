@@ -1,10 +1,11 @@
 class SearchController < ApplicationController
-  
 
   def search_home
+    authorize :search, :search_home?
   end
 
   def search_results
+    authorize :search, :search_results?
     @game = Game.new
     @game_list = []
     user_year = params.fetch(:year)
