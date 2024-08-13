@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     def user_not_authorized
 
       if current_user == nil
-        flash[:alert] = "You must be signed in to search!"
+        flash[:alert] = "You must be signed in to do that!"
       else
         flash[:alert] = "You are not authorized to perform this action."
       end
