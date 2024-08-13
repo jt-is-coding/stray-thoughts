@@ -5,7 +5,7 @@ class LandingPagePolicy < ApplicationPolicy
     @user = user
   end
 
-  def home?
+  def index?
     true
   end
 

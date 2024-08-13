@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "landing_page#home"
+  root "landing_page#index"
   devise_for :users
 
   resources :games do 
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :notes, only: [:index]
 
-  get "/search" => "search#search_home"
-  get "/search/results" => "search#search_results"
+  
+  get "/search" => "search#index"
 
 end

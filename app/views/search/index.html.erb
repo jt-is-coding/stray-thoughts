@@ -1,0 +1,21 @@
+<div class="text-center">
+  <h3>Search</h3>
+  <%= render "form" %>
+</div>
+
+<%# only render if there are results %>
+
+<% if @url.include?("Search") == true %>
+  <% if @game_list != nil %>
+    <div class="d-flex flex-wrap justify-content-center">
+    <% 3.times do %>
+      <div class="pt-4 ps-3">
+        <%= render "display" %>
+      </div>
+    <% end %>
+    </div>
+  <% else %>
+    <br>
+    <h3>Sorry, search failed! Please try again!</h3>
+  <% end %>
+<% end %>

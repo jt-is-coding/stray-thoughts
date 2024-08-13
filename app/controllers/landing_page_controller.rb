@@ -1,7 +1,7 @@
 class LandingPageController < ApplicationController
 
-  def home
-    authorize :landing_page, :home?
+  def index
+    authorize :landing_page, :index?
     @note = Note.where({ author: User.find_by(username: "jt") }).at(2)
   end
 

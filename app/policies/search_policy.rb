@@ -5,12 +5,8 @@ class SearchPolicy < ApplicationPolicy
     @user = user
   end
   
-  def search_home?
+  def index?
     user != nil
-  end
-
-  def search_results?
-    search_home?
   end
 
 end
