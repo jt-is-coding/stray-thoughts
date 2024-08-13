@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   end
   resources :notes, only: [:index]
 
-  
   get "/search" => "search#index"
 
 end
