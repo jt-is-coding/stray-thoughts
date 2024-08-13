@@ -26,15 +26,13 @@ class Note < ApplicationRecord
 
   validates :author_id, presence: true
   
+  def update_searchable_content
+    self.searchable_content = content.to_plain_text
+  end
 
   private
 
   def self.ransackable_attributes(auth_object = nil)
     ["searchable_content"]
   end
-
-  def update_searchable_content
-    self.searchable_content = content.to_plain_text
-  end
-
 end
