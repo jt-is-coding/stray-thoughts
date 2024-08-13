@@ -4,7 +4,8 @@ class NotesController < ApplicationController
 
   # GET /notes or /notes.json
   def index
-    @notes = current_user.notes.page(params[:page]).per(10)
+    @q = current_user.notes.page(params[:page]).per(9).ransack(params[:q])
+    @notes = @q.result
   end
 
   # GET /notes/1 or /notes/1.json
