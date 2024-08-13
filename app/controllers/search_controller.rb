@@ -4,7 +4,7 @@ class SearchController < ApplicationController
     authorize :search, :index?
     @game = Game.new
     @game_list = []
-    @url = request.original_url.split("=")
+    @url = request.original_url.gsub(/[^\w\s]/, '')
 
     if @url.include?("Search") == true
       user_year = params.fetch(:year)

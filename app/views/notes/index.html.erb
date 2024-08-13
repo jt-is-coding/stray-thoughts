@@ -1,6 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 class="text-center">Notes</h1>
+<div class="d-flex flex-column align-items-center">
+  <h1>Notes</h1>
+  <%= paginate @notes %>
+</div>
 
 <div id="notes" class="d-flex flex-wrap justify-content-center">
   <% @notes.each do |note| %>

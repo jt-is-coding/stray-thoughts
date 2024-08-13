@@ -1,4 +1,4 @@
-<% url = request.original_url.split("/") %>
+<% url = request.original_url.gsub(/[^\w\s]/, '') %>
 
 <div id="<%= dom_id note %>" class="d-flex align-items-center card" style="max-width: 40vh;">
   <div class="card-body second_secondary rounded text-center">
@@ -27,7 +27,6 @@
     <% if url.include?("games") == false && current_user == note.author %>
       <%= link_to game_note_path(note.parent, note) do %>
         <i class="stretched-link"></i>
-        <i class="fa-solid fa-chevron-right fa-lg position-absolute top-50 end-0 icon_color"></i>
       <% end %>
     <% end %>
   </div>
