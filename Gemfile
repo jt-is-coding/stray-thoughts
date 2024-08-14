@@ -14,6 +14,10 @@ gem "pg", "~> 1.1"
 
 gem "pundit"
 
+gem "kaminari", "~> 1.2"
+
+gem "ransack", "~> 4.1"
+
 gem "aws-sdk-s3", require: false
 
 gem "dotenv", groups: [:development, :test, :production]

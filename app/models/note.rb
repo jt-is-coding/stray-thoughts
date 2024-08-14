@@ -2,11 +2,12 @@
 #
 # Table name: notes
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  author_id  :integer          not null
-#  parent_id  :integer
+#  id                 :integer          not null, primary key
+#  searchable_content :text
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  author_id          :integer          not null
+#  parent_id          :integer
 #
 # Indexes
 #
@@ -24,4 +25,15 @@ class Note < ApplicationRecord
   has_rich_text :content
 
   validates :author_id, presence: true
+  before_save :update_searchable_content
+
+  private
+  
+  def update_searchable_content
+    self.searchable_content = content.to_plain_text
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["searchable_content"]
+  end
 end

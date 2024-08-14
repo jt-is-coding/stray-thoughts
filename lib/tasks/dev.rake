@@ -53,3 +53,9 @@ task({ :sample_data => :environment }) do
   end
   p "There are now #{Note.count} notes"
 end
+
+task({ :content_to_plain_text => :environment }) do
+  Note.find_each do |note|
+    note.update(searchable_content: note.content.to_plain_text)
+  end
+end

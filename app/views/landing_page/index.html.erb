@@ -1,20 +1,19 @@
+<div class="text-center text_color d-flex flex-column mt-5 pt-5">
+  
+  <span class="background-image"></span>
+  <h1 class="one-liner">Discover & Catalogue all in one tab.</h1>
 
+  <% if current_user == nil %>
+    <%= link_to new_user_session_path do %>
+      <button class="btn btn-dark btn-lg mt-5">Get started</button>
+    <% end %>
+  <% else %>
+    <%= link_to search_path do %>
+      <button class="btn btn-dark btn-lg mt-5">Get started</button>
+    <% end %>
+  <% end %>
 
-<div class="text-center text_color d-flex flex-column px-1 py-2">
-
-  <div class="d-flex justify-content-around mt-5">
-    <div class="text-start mt-3">
-      <h1>Discover<br/>& Catalogue games<br/>all in one tab.</h1>
-      <%= link_to search_path do %>
-        <button class="btn btn-dark">Get started</button>
-      <% end %>
-    </div>
-
-    <%= image_tag("static21", class: "rounded", style: "max-width:60vh;") %>
-  </div>
-
-  <br>
-  <div class="d-flex justify-content-around accent border rounded pt-3 pe-3">
+  <div class="d-flex justify-content-around accent border rounded features pt-3 container", style="line-height:3;">
     <ul>
       <h3>Discover</h3>
       <span class="text-start">
@@ -47,18 +46,24 @@
   </div>
 
   <br>
-   
-
-  <br>
-  <hr>
-  <br>
 
   <div>
-    <p>
-      <strong>Here's an example of a note!</strong>
-    </p>
+    <button type="button" class="btn btn-dark mb-5" data-bs-toggle="modal" data-bs-target="#exampleNoteModal">
+      Here's an example of a note!
+    </button>
+  </div>
 
-    <%= render "notes/note", note: @note %>
-    
+  <div class="modal fade" id="exampleNoteModal" tabindex="-1" aria-labelledby="exampleNoteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header secondary">
+          <h1 class="modal-title fs-5" id="exampleNoteModalLabel">Click the game title to minimize the sidebar!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body background">
+          <%= render "notes/note", note: @note %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
