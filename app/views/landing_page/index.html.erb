@@ -4,12 +4,12 @@
   <h1 class="one-liner">Discover & Catalogue all in one tab.</h1>
 
   <% if current_user == nil %>
-    <%= link_to new_user_registration_path do %>
-      <button class="btn btn-dark mt-5">Get started</button>
+    <%= link_to new_user_session_path do %>
+      <button class="btn btn-dark btn-lg mt-5">Get started</button>
     <% end %>
   <% else %>
     <%= link_to search_path do %>
-      <button class="btn btn-dark mt-5">Get started</button>
+      <button class="btn btn-dark btn-lg mt-5">Get started</button>
     <% end %>
   <% end %>
 
