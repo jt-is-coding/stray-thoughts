@@ -31,7 +31,7 @@ task({ :sample_data => :environment }) do
     g = Game.create(
       title: game.title,
       description: game.genre,
-      image: "/assets/segabits-seganet-limp-bizkit.png",
+      image: "/assets/blue.png",
       platforms: game.platform,
       api_id: rand(1000)
     )
@@ -58,4 +58,6 @@ task({ :content_to_plain_text => :environment }) do
   Note.find_each do |note|
     note.update(searchable_content: note.content.to_plain_text)
   end
+end
+
 end
