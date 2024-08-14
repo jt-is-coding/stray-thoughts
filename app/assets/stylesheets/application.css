@@ -36,9 +36,25 @@
   z-index: -1;
  }
 
+ .flash {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 1000; /* Make sure it appears above other content */
+  color: #721c24; /* Example text color for errors */
+ }
+
+ .flash-container {
+  position: relative;
+}
+
+
  .one-liner {
   margin-top: 100px;
   font-size: 4rem;
+  text-shadow: 1px 1px #000000;
  }
 
  .features {
