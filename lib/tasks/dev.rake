@@ -11,6 +11,7 @@ task({ :sample_data => :environment }) do
   usernames = []
   usernames << "alice"
   usernames << "bob"
+  usernames << "jt"
 
   8.times do
     usernames << Faker::Name.first_name

@@ -27,6 +27,7 @@ To install (and run), enter the following in a terminal:
 bundle install
 rails db:create
 rails db:migrate
+rake sample_data
 bin/dev
 ```
 
