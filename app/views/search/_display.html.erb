@@ -1,7 +1,7 @@
 <%= render "extract_info" %>
 
 <div class="d-flex flex-column align-items-center card" style="max-width: 40vh;">
-  <div class="card-body second_secondary rounded text-center">
+  <div class="card-body second-secondary rounded text-center">
     <%= image_tag(@image_icon, class: "card-img-top") %>
     <h1 class="card-title text-center">
       <%= @title = @selected_game.fetch("name")%>
