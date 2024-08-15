@@ -60,5 +60,3 @@ task({ :content_to_plain_text => :environment }) do
     note.update(searchable_content: note.content.to_plain_text)
   end
 end
-
-end
