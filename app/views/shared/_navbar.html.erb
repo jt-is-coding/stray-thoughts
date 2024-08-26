@@ -4,7 +4,7 @@
     <%= link_to "stray thoughts", root_path, class: "navbar_brand fs-5 text-color" %>
     
     <div id="navbarSupportedContent">
-      
+      <%# You have two navbars with very similar views. Potentially can make one with if statements to display certian parts based on the screen size to keep code DRY. %>
       <%= render partial: "/shared/navbar_mobile" %>
       <%= render partial: "/shared/navbar_big" %>
   

@@ -85,6 +85,7 @@ test:
 #
 production:
   <<: *default
+  # Should change the production database name from the rails template name. 
   database: rails_template_production
   username: rails_template
   password: <%= ENV["RAILS_TEMPLATE_DATABASE_PASSWORD"] %>

@@ -14,7 +14,8 @@
 
   <body class="background">
     <%= render partial: "/shared/navbar" %>
-   
+
+    <%# what is this conditional doing? It looks like they both display similar things  %>
     <% if request.original_url.gsub(/[^\w\s]/, '').include?("notes") == false %>
       <div class="flash-container container">
         <div class="flash">

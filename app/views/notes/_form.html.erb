@@ -14,11 +14,12 @@
   <div class="trix-content">
     <%= form.rich_text_area :content %>
   </div>
-
+  <%# Having a hidden field here allows a user to change the User ID in the browser which is a security risk. %>
   <div>
     <%= form.hidden_field :author_id, value: current_user.id %>
   </div>
 
+  <%# Having a hidden field here allows a user to change the game ID in the browser. %>
   <div>
     <%= form.hidden_field :parent_id, value: @game.id %>
   </div>
