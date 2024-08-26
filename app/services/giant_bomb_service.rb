@@ -1,3 +1,5 @@
+# Is this being used? If so where is this being called?
+
 class GiantBombService
   BASE_URL = "https://www.giantbomb.com/api/games"
 

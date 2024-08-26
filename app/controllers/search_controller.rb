@@ -1,3 +1,5 @@
+# This logic should be done in a service not in the controller. Potenitally put this logic inside the giant bomb service you created.
+
 class SearchController < ApplicationController
 
   def index
@@ -35,5 +37,5 @@ class SearchController < ApplicationController
       end
     end
   end
-  
+
 end
