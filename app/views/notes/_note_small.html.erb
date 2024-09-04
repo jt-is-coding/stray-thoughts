@@ -1,33 +1,36 @@
 <% url = request.original_url.gsub(/[^\w\s]/, '') %>
 
 <div id="<%= dom_id note %>" class="d-flex align-items-center card" style="max-width: 40vh;">
-  <div class="card-body second-secondary rounded text-center">
-
-    <%= image_tag(note.parent.image, class: "card-img-top pb-3") %>   
-    
-    <% if url.include?("notes") == true && url.include?("games") == false %>
-      <h3 class="card-title">
-        <%= note.parent.title %>
-      </h3>
-      <hr>
-    <% end %>
-    
-    <i>
-      <%= note.parent.platforms %>
-    </i>
-
-    <hr>
+  <% if url.include?("notes") == true && url.include?("games") == false %>
+    <div class="card-body card-interactable second-secondary rounded text-center">
+  <% else %>
+    <div class="card-body second-secondary rounded text-center">
+  <% end %>
+      <%= image_tag(note.parent.image, class: "card-img-top pb-3") %>   
       
-    <% if url.include?("games") == true || url.include?("games" && "notes") == false %>
-      <%= note.parent.description %> 
-    <% else %>
-      <%= note.parent.description.truncate_words(10) %>
-    <% end %>
-  
-    <% if url.include?("games") == false && current_user == note.author %>
-      <%= link_to game_note_path(note.parent, note) do %>
-        <i class="stretched-link"></i>
+      <% if url.include?("notes") == true && url.include?("games") == false %>
+        <h3 class="card-title">
+          <%= note.parent.title %>
+        </h3>
+        <hr>
       <% end %>
-    <% end %>
-  </div>
+      
+      <i>
+        <%= note.parent.platforms %>
+      </i>
+
+      <hr>
+        
+      <% if url.include?("games") == true || url.include?("games" && "notes") == false %>
+        <%= note.parent.description %> 
+      <% else %>
+        <%= note.parent.description.truncate_words(10) %>
+      <% end %>
+    
+      <% if url.include?("games") == false && current_user == note.author %>
+        <%= link_to game_note_path(note.parent, note) do %>
+          <i class="stretched-link"></i>
+        <% end %>
+      <% end %>
+    </div>
 </div>
